@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: valaxy-rtp
-  namespace: valaxy
+  name: paramaah-rtp
+  namespace: paramaah
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app:  valaxy-rtp
+      app:  paramaah-rtp
   template:
     metadata:
       labels:
-        app:  valaxy-rtp
+        app:  paramaah-rtp
     spec:
       imagePullSecrets:
       - name: jfrogcred 
       containers:
-      - name:  valaxy-rtp
-        image: valaxy01.jfrog.io/valaxy-docker/ttrend:2.1.2
+      - name:  paramaah-rtp
+        image: paramaah02.jfrog.io/paramaah-docker/ttrend:2.1.2
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
